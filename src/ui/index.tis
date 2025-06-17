@@ -584,6 +584,7 @@ class App: Reactor.Component
                     {system_error ? <SystemError /> : ""}
                     {!system_error && handler.is_login_wayland() && !handler.current_is_wayland() ? <FixWayland /> : ""}
                     {!system_error && handler.current_is_wayland() ? <ModifyDefaultLogin /> : ""}
+		<ConnectStatus @{this.connect_status} />
                 </div>
                 <div .right-pane style="display:none">
                     <div .right-content>
@@ -1149,7 +1150,7 @@ function showAbout() {
 
 function showSettings() {
     if ($(#overlay).style#display == 'block') return;
-    myIdMenu.showSettingMenu();
+    // myIdMenu.showSettingMenu();
 }
 
 function checkConnectStatus() {
