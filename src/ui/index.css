@@ -27,7 +27,7 @@ body {
 }
 
 .left-pane {
-    width: *;
+    width:*;
     height: *;
     background: color(bg);
     border-right: color(border) 1px solid;
