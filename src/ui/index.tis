@@ -3,7 +3,7 @@ stdout.println("current platform:", OS);
 stdout.println("is_xfce: ", is_xfce);
 
 // html min-width, min-height not working on mac, below works for all
-view.windowMinSize = (scaleIt(560), scaleIt(300));
+view.windowMinSize = (scaleIt(400/1.5), scaleIt(300));
 
 var app;
 var tmp = handler.get_connect_status();
@@ -303,7 +303,7 @@ class MyIdMenu: Reactor.Component {
     function render() {
         return <div #myid>
             {this.renderPop()}
-            ID{svg_menu}
+            ID<div style="display:none;">{svg_menu}</div>
         </div>;
     }
 
@@ -585,7 +585,7 @@ class App: Reactor.Component
                     {!system_error && handler.is_login_wayland() && !handler.current_is_wayland() ? <FixWayland /> : ""}
                     {!system_error && handler.current_is_wayland() ? <ModifyDefaultLogin /> : ""}
                 </div>
-                <div .right-pane>
+                <div .right-pane style="display:none">
                     <div .right-content>
                         <div .card-connect>
                             <div .title>{translate('Control Remote Desktop')}</div>
@@ -904,7 +904,7 @@ class PasswordArea: Reactor.Component {
             <div .password style="flow:horizontal">
                 {this.renderPop()}
                 <PasswordEyeArea />
-                {svg_edit}
+               <div style="display:none">{svg_edit}</div>
             </div>
         </div>;
     }
