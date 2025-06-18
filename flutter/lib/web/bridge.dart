@@ -1601,7 +1601,7 @@ class RustdeskImpl {
   }
 
   bool isDisableSettings({dynamic hint}) {
-    return false;
+    return true;
   }
 
   bool isDisableAb({dynamic hint}) {
